@@ -1,0 +1,22 @@
+<html> 
+   <head> 
+    <meta charset="UTF-8">
+    <title> {{.Title}}</title>
+   </head> 
+   <body> 
+     <h1>Title : {{.Title}}
+     {{ if .Completed }}
+     &#9989;
+     {{else}} 
+     &#10060; 
+     
+     {{end}}</h1>
+     <form action="/tasks/{{.ID}}" method="post">
+     <input value="Complete" type="submit">
+     </form> 
+     <h2>Description : {{.Description}} </h2>
+     {{ if .Completed }} 
+     <h4>Completed : {{.CompletedOn}} </h4>
+     {{ end }}
+   </body> 
+</html>
